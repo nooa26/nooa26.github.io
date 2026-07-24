@@ -35,20 +35,28 @@
             }
 
             h1 {
-                color: #e6cc7a;
+                color: #f7dc83;
                 font-family: "Jersey 10", sans-serif;
                 font-weight: 500;
                 font-style: normal;
                 font-size: 4.5rem;
                 margin-bottom: 10px;
                 transition: transform 0.4s ease-in-out;
+                animation-name: plop;
+                animation-duration: 2s;
             }
+            @keyframes plop {
+                0% { transform: scale(0); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+
             h1:hover {
                 transform: scale(1.1);
                 transition: transform 0.4s ease-in-out;
             }
             .icons {
-                color: #e6cc7a;
+                color: #f7dc83;
                 background-color: #25d36500;
                 padding: 10px 10px;
                 border-radius: 5px;
@@ -58,6 +66,9 @@
                 gap: 8px;
                 font-size: 2rem;
                 transition: transform 0.2s ease-in-out;
+                animation-name: plop;
+                animation-duration: 3s;
+
             }
             .icons:hover {
                 transform: scale(1.3);
