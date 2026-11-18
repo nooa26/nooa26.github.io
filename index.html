@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Noa M. Fries</title>
         <style>
+            :root {
+                /* Farben: */
+                --textfarbe: #d8c590;
+            }
             body {
                 display: flex;
                 flex-direction: column;
@@ -18,8 +22,8 @@
                 min-height: 100vh;
                 margin: 0;
                 overflow: hidden;
-                background: linear-gradient(-45deg, #000000, #008b35, #e6cc7a);
-                background-size: 400% 400%;
+                background: linear-gradient(-45deg,#01150f, #022f22, #095539);
+                background-size: 500% 500%;
                 animation: gradientShift 3000ms;
                 animation-fill-mode: forwards
                 }
@@ -35,20 +39,41 @@
             }
 
             h1 {
-                color: #ffe796;
+                color: var(--textfarbe);
                 font-family: "Jersey 10", sans-serif;
                 font-weight: 500;
                 font-style: normal;
                 font-size: 4.5rem;
                 margin-bottom: 10px;
-                transition: transform 0.4s ease-in-out;
+
+                overflow: hidden;
+                border-right: .15em solid var(--textfarbe);
+                white-space: nowrap;
+                margin: 0 auto;
+                letter-spacing: .05em;
+                animation: 
+                    typing 2s steps(40, end),
+                    blink-caret .75s step-end infinite;
+                
+                /* transition: transform 0.4s ease-in-out;
                 animation-name: plop;
-                animation-duration: 4s;
+                animation-duration: 4s; */
             }
+
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+                }
+
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: var(--textfarbe); }
+                }
+            
             @keyframes plop {
                 0% { transform: scale(0); }
                 50% { transform: scale(0); }
-                75% { transform: scale(1.1); }
+                85% { transform: scale(0); }
                 90% { transform: scale(0.95); }
                 95% { transform: scale(1.025); }
                 100% { transform: scale(1); }
@@ -63,7 +88,7 @@
                 transition: transform 0.4s ease-in-out;
             }
             .icons {
-                color: #ffe796;
+                color: var(--textfarbe);
                 background-color: #25d36500;
                 padding: 10px 10px;
                 border-radius: 5px;
@@ -74,7 +99,7 @@
                 font-size: 2rem;
                 transition: transform 0.2s ease-in-out;
                 animation-name: plop;
-                animation-duration: 3s;
+                animation-duration: 2s;
             }
             .icons:hover {
                 transform: scale(1.3);
